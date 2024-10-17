@@ -1,0 +1,7 @@
+{
+  "name": "takstwo",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
