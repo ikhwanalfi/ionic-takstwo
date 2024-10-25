@@ -1,0 +1,77 @@
+<ion-content class="ion-padding register-page">
+  <div class="register-container">
+    <h1>Get Started</h1>
+    <p class="subtitle">by creating a free account.</p>
+
+    <!-- Username Input -->
+    <ion-item lines="none" class="input-item">
+      <ion-input
+        [(ngModel)]="username"
+        type="text"
+        placeholder="Username"
+        required
+      ></ion-input>
+      <ion-icon slot="end" name="person-outline"></ion-icon>
+    </ion-item>
+
+    <!-- Email Input -->
+    <ion-item lines="none" class="input-item">
+      <ion-input
+        [(ngModel)]="email"
+        type="email"
+        placeholder="Valid email"
+        required
+      ></ion-input>
+      <ion-icon slot="end" name="mail-outline"></ion-icon>
+    </ion-item>
+
+    <!-- Password Input with Toggle -->
+    <ion-item lines="none" class="input-item">
+      <ion-input
+        [(ngModel)]="password"
+        [type]="showPassword ? 'text' : 'password'"
+        placeholder="Strong Password"
+        required
+      ></ion-input>
+      <ion-icon slot="end" name="lock-closed-outline"></ion-icon>
+      <ion-icon
+        slot="end"
+        [name]="showPassword ? 'eye-off-outline' : 'eye-outline'"
+        (click)="togglePassword()"
+      ></ion-icon>
+    </ion-item>
+
+    <!-- Photo Upload Input -->
+    <ion-item lines="none" class="input-item">
+      <input type="file" (change)="onFileChange($event)" />
+      <ion-icon slot="end" name="image-outline"></ion-icon>
+    </ion-item>
+
+    <!-- Terms and Conditions Checkbox -->
+    <ion-row class="terms-row">
+      <ion-col size="auto">
+        <ion-checkbox [(ngModel)]="termsAccepted"></ion-checkbox>
+      </ion-col>
+      <ion-col>
+        <label>
+          By checking the box you agree to our
+          <a href="#">Terms and Conditions</a>.
+        </label>
+      </ion-col>
+    </ion-row>
+
+    <!-- Register Button -->
+    <ion-button
+      expand="block"
+      class="next-button"
+      shape="round"
+      (click)="register()"
+      >Next</ion-button
+    >
+
+    <!-- Login Redirect Link -->
+    <p class="login-text">
+      Already a member? <a routerLink="/login">Log In</a>
+    </p>
+  </div>
+</ion-content>

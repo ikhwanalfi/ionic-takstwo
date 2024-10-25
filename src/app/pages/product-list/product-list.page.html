@@ -1,0 +1,55 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Products</ion-title>
+    <ion-buttons slot="end">
+      <ion-button [routerLink]="['/profile']">
+        <ion-icon name="person-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-refresher slot="fixed" (ionRefresh)="handleRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <div *ngIf="products.length > 0; else noProducts">
+    <ion-card
+      *ngFor="let product of products"
+      [routerLink]="['/product-detail', product.id]"
+      routerDirection="forward"
+      class="product-card"
+    >
+      <img
+        *ngIf="product.photo_urls && product.photo_urls.length > 0"
+        [src]="product.photo_urls[0]"
+        alt="{{ product.name }}"
+        class="product-image"
+      />
+      <ion-card-header>
+        <ion-card-title class="ion-text-capitalize"
+          >{{ product.name }}</ion-card-title
+        >
+        <ion-card-subtitle>{{ product.price | currency }}</ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
+        <p>{{ product.description }}</p>
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+  <ng-template #noProducts>
+    <p>No products available.</p>
+  </ng-template>
+
+  <ion-fab slot="fixed" vertical="bottom" horizontal="start">
+    <ion-fab-button>
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-list side="end">
+      <ion-fab-button [routerLink]="['/product-upload']">
+        <ion-icon name="images-outline"></ion-icon>
+      </ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
+</ion-content>

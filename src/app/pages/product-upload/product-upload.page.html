@@ -1,0 +1,71 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Add Product</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Add New Product</ion-card-title>
+        <ion-card-subtitle>Fill in the details below</ion-card-subtitle>
+      </ion-card-header>
+
+      <ion-card-content>
+        <!-- Input untuk memilih file gambar -->
+        <ion-item>
+          <input
+            type="file"
+            (change)="onFileSelected($event)"
+            accept="image/*"
+          />
+        </ion-item>
+
+        <!-- Pratinjau gambar jika file dipilih -->
+        <ion-item *ngIf="imagePreview">
+          <img
+            [src]="imagePreview"
+            alt="Image Preview"
+            style="max-width: 200px; margin-top: 10px"
+          />
+        </ion-item>
+
+        <!-- Input untuk detail produk -->
+        <ion-item>
+          <ion-input
+            label="Name"
+            labelPlacement="floating"
+            fill="outline"
+            formControlName="name"
+            placeholder="Enter Name"
+          ></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input
+            label="Price"
+            labelPlacement="floating"
+            fill="outline"
+            type="number"
+            formControlName="price"
+            placeholder="Enter Price"
+          ></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-textarea
+            label="Description"
+            labelPlacement="floating"
+            fill="outline"
+            formControlName="description"
+            placeholder="Enter Description"
+          ></ion-textarea>
+        </ion-item>
+
+        <!-- Tombol untuk mengupload data produk -->
+        <ion-button expand="full" type="submit" color="primary">
+          Add Product
+        </ion-button>
+      </ion-card-content>
+    </ion-card>
+  </form>
+</ion-content>

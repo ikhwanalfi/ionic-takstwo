@@ -1,0 +1,31 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Detail Product</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card *ngIf="detail">
+    <img
+      *ngIf="detail.photo_urls && detail.photo_urls.length > 0"
+      [src]="detail.photo_urls[0]"
+      alt="{{ detail.name }}"
+      style="width: 100%; height: auto; border-radius: 10px 10px 0 0"
+    />
+    <ion-card-header>
+      <ion-card-title class="ion-text-capitalize"
+        >{{ detail.name }}</ion-card-title
+      >
+      <ion-card-subtitle>{{ detail.price | currency }}</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <p>{{ detail.description }}</p>
+    </ion-card-content>
+    <ion-button color="danger" (click)="deleteProduct()" expand="block"
+      >Delete Product</ion-button
+    >
+    <ion-button color="primary" (click)="editProduct()" expand="block"
+      >Edit</ion-button
+    >
+  </ion-card>
+</ion-content>

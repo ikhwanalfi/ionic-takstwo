@@ -1,0 +1,61 @@
+<ion-content class="ion-padding login-page">
+  <div class="login-container">
+    <!-- <img src="assets/icon/nike-shoe.png" alt="shoe-image" class="shoe-image" /> -->
+    <h1>Welcome back</h1>
+    <p class="subtitle">Sign in to access your account</p>
+
+    <!-- Username Input -->
+    <ion-item lines="none" class="input-item">
+      <ion-input
+        [(ngModel)]="username"
+        type="text"
+        placeholder="Enter Username"
+        required
+      ></ion-input>
+      <!-- <ion-icon slot="end" name="person-outline"></ion-icon> -->
+    </ion-item>
+
+    <!-- Password Input with Toggle -->
+    <ion-item lines="none" class="input-item">
+      <ion-input
+        [(ngModel)]="password"
+        [type]="showPassword ? 'text' : 'password'"
+        placeholder="Password"
+        required
+      ></ion-input>
+      <!-- <ion-icon slot="end" name="lock-closed-outline"></ion-icon> -->
+      <ion-icon
+        slot="end"
+        [name]="showPassword ? 'eye-off-outline' : 'eye-outline'"
+        (click)="togglePassword()"
+      ></ion-icon>
+    </ion-item>
+
+    <!-- Remember Me and Forgot Password -->
+    <ion-row class="options-row">
+      <ion-col size="6">
+        <ion-checkbox [(ngModel)]="termsAccepted"></ion-checkbox>
+        <label> Remember me</label>
+      </ion-col>
+      <ion-col size="6" class="text-right">
+        <label>
+          <a href="#" class="forgot-password">Forget password?</a>
+        </label>
+      </ion-col>
+    </ion-row>
+
+    <!-- Login Button -->
+    <ion-button
+      expand="block"
+      class="next-button"
+      shape="round"
+      (click)="loginUser()"
+      >Next</ion-button
+    >
+
+    <!-- Register Redirect Link -->
+    <p class="register-text">
+      New Member? <a routerLink="/register">Register now</a>
+    </p>
+  </div>
+</ion-content>

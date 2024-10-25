@@ -1,0 +1,157 @@
+.login-page {
+  --background: #121929; /* Warna latar belakang sesuai desain */
+
+  .login-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+
+    .shoe-image {
+      width: 150px;
+      margin-bottom: 30px;
+    }
+
+    h1 {
+      color: #fff;
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .subtitle {
+      color: #808d9c;
+      font-size: 14px;
+      margin-bottom: 40px;
+    }
+
+    .input-item {
+      width: 350px;
+      background-color: #1e293b;
+      border-radius: 8px;
+      margin-bottom: 15px;
+      ion-input {
+        color: #000000;
+      }
+      ion-icon {
+        color: #808d9c;
+      }
+    }
+
+    .options-row {
+      width: 100%;
+      padding: 0 20px;
+      margin-bottom: 30px;
+
+      label {
+        color: #808d9c;
+        font-size: 12px;
+      }
+
+      .text-right {
+        text-align: right;
+      }
+
+      .forgot-password {
+        color: #007bff;
+        font-size: 12px;
+      }
+    }
+
+    .next-button {
+      --background: #4a80f0;
+      --border-radius: 24px;
+      --padding-start: 10px;
+      --padding-end: 10px;
+      width: 90%;
+    }
+
+    .register-text {
+      color: #fff;
+      font-size: 14px;
+      margin-top: 20px;
+      a {
+        color: #4a80f0;
+        font-weight: bold;
+      }
+    }
+  }
+}
+/* Styling container */
+.page-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 20px;
+  background-color: #f4f4f4;
+}
+
+.login-form {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+}
+
+/* Input field styling */
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+/* Button styling */
+button {
+  width: 100%;
+  padding: 12px;
+  background-color: #3880ff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #3171e0;
+}
+
+.custom-toast {
+  --background: #ffffff; /* Latar belakang putih */
+  --border-radius: 12px; /* Rounded corners */
+  --color: #000000; /* Warna teks hitam */
+  --width: 90%; /* Lebar toast */
+  --max-width: 400px;
+  text-align: center;
+}
+
+.custom-toast .toast-message {
+  font-size: 18px; /* Ukuran font pesan */
+  font-weight: bold;
+}
+
+.custom-toast .toast-button {
+  --color: #4a80f0; /* Warna tombol Retry */
+  font-size: 18px; /* Ukuran font tombol */
+  font-weight: bold;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .login-form {
+    padding: 15px;
+  }
+  input[type="text"],
+  input[type="password"],
+  button {
+    font-size: 14px;
+  }
+}

@@ -1,0 +1,87 @@
+.register-page {
+  --background: #121929; /* Warna latar belakang */
+
+  .register-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+
+    h1 {
+      color: #fff;
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .subtitle {
+      color: #808d9c;
+      font-size: 14px;
+      margin-bottom: 40px;
+    }
+
+    .input-item {
+      width: 350px;
+      background-color: #1e293b;
+      border-radius: 8px;
+      margin-bottom: 15px;
+      ion-input {
+        color: #000000;
+      }
+      ion-icon {
+        color: #808d9c;
+      }
+    }
+
+    .terms-row {
+      width: 90%;
+      margin: 10px 0;
+      display: flex;
+      align-items: center;
+      label {
+        color: #808d9c;
+        font-size: 12px;
+        a {
+          color: #4a80f0;
+        }
+      }
+    }
+
+    .next-button {
+      --background: #4a80f0;
+      --border-radius: 24px;
+      --padding-start: 10px;
+      --padding-end: 10px;
+      width: 90%;
+    }
+
+    .login-text {
+      color: #fff;
+      font-size: 14px;
+      margin-top: 20px;
+      a {
+        color: #4a80f0;
+        font-weight: bold;
+      }
+    }
+  }
+  .terms-row {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+
+    ion-checkbox {
+      margin-right: 10px; // Tambahkan margin jika checkbox tertutup elemen lain
+    }
+
+    label {
+      color: #808d9c;
+      font-size: 12px;
+    }
+  }
+  ion-checkbox {
+    background-color: red; // Tambahkan warna latar untuk melihat jika checkbox ada tapi tidak terlihat
+    border: 1px solid black;
+  }
+}
